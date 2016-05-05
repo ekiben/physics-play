@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40160A091CEBB3B1003C6808 /* ParticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40160A081CEBB3B1003C6808 /* ParticleView.swift */; };
+		40160A0D1CEBB3CF003C6808 /* ElasticBodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40160A0A1CEBB3CF003C6808 /* ElasticBodyViewController.swift */; };
+		40160A0E1CEBB3CF003C6808 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40160A0B1CEBB3CF003C6808 /* MenuViewController.swift */; };
+		40160A0F1CEBB3CF003C6808 /* ParticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40160A0C1CEBB3CF003C6808 /* ParticleViewController.swift */; };
+		40BBDAE11CECBFB700176C63 /* OrientationDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBDAE01CECBFB700176C63 /* OrientationDetector.swift */; };
 		40C1F9461CA5835D00B71ED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C1F9451CA5835D00B71ED5 /* AppDelegate.swift */; };
-		40C1F9481CA5835D00B71ED5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C1F9471CA5835D00B71ED5 /* ViewController.swift */; };
 		40C1F94B1CA5835D00B71ED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C1F9491CA5835D00B71ED5 /* Main.storyboard */; };
 		40C1F94D1CA5835D00B71ED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C1F94C1CA5835D00B71ED5 /* Assets.xcassets */; };
 		40C1F9501CA5835D00B71ED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C1F94E1CA5835D00B71ED5 /* LaunchScreen.storyboard */; };
 		40C1F95B1CA5835D00B71ED5 /* PhysicsEngineLikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C1F95A1CA5835D00B71ED5 /* PhysicsEngineLikeTests.swift */; };
-		40DBBA811CA67FDC0015AB67 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBBA801CA67FDC0015AB67 /* Point.swift */; };
-		40DBBA831CA67FEA0015AB67 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBBA821CA67FEA0015AB67 /* Connection.swift */; };
-		40DBBA851CA6801F0015AB67 /* PhysicsLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBBA841CA6801F0015AB67 /* PhysicsLike.swift */; };
+		40DBBA851CA6801F0015AB67 /* PhysicsEngineLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBBA841CA6801F0015AB67 /* PhysicsEngineLike.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +31,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40160A081CEBB3B1003C6808 /* ParticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticleView.swift; path = View/ParticleView.swift; sourceTree = "<group>"; };
+		40160A0A1CEBB3CF003C6808 /* ElasticBodyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElasticBodyViewController.swift; path = Control/ElasticBodyViewController.swift; sourceTree = "<group>"; };
+		40160A0B1CEBB3CF003C6808 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Control/MenuViewController.swift; sourceTree = "<group>"; };
+		40160A0C1CEBB3CF003C6808 /* ParticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticleViewController.swift; path = Control/ParticleViewController.swift; sourceTree = "<group>"; };
+		40BBDAE01CECBFB700176C63 /* OrientationDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrientationDetector.swift; path = Control/OrientationDetector.swift; sourceTree = "<group>"; };
 		40C1F9421CA5835D00B71ED5 /* PhysicsEngineLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsEngineLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C1F9451CA5835D00B71ED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40C1F9471CA5835D00B71ED5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40C1F94A1CA5835D00B71ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40C1F94C1CA5835D00B71ED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C1F94F1CA5835D00B71ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,9 +45,7 @@
 		40C1F9561CA5835D00B71ED5 /* PhysicsEngineLikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicsEngineLikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C1F95A1CA5835D00B71ED5 /* PhysicsEngineLikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsEngineLikeTests.swift; sourceTree = "<group>"; };
 		40C1F95C1CA5835D00B71ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40DBBA801CA67FDC0015AB67 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Model/Point.swift; sourceTree = "<group>"; };
-		40DBBA821CA67FEA0015AB67 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = Model/Connection.swift; sourceTree = "<group>"; };
-		40DBBA841CA6801F0015AB67 /* PhysicsLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsLike.swift; path = Model/PhysicsLike.swift; sourceTree = "<group>"; };
+		40DBBA841CA6801F0015AB67 /* PhysicsEngineLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsEngineLike.swift; path = Model/PhysicsEngineLike.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		406BEF5C1CEB857700CE8ACF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40160A081CEBB3B1003C6808 /* ParticleView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		406BEF5D1CEB85C500CE8ACF /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				40160A0A1CEBB3CF003C6808 /* ElasticBodyViewController.swift */,
+				40160A0B1CEBB3CF003C6808 /* MenuViewController.swift */,
+				40160A0C1CEBB3CF003C6808 /* ParticleViewController.swift */,
+				40BBDAE01CECBFB700176C63 /* OrientationDetector.swift */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
 		40C1F9391CA5835D00B71ED5 = {
 			isa = PBXGroup;
 			children = (
@@ -84,9 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				40DBBA7D1CA63E540015AB67 /* Model */,
-				40C1F9451CA5835D00B71ED5 /* AppDelegate.swift */,
-				40C1F9471CA5835D00B71ED5 /* ViewController.swift */,
+				406BEF5C1CEB857700CE8ACF /* View */,
+				406BEF5D1CEB85C500CE8ACF /* Control */,
 				40C1F9491CA5835D00B71ED5 /* Main.storyboard */,
+				40C1F9451CA5835D00B71ED5 /* AppDelegate.swift */,
 				40C1F94C1CA5835D00B71ED5 /* Assets.xcassets */,
 				40C1F94E1CA5835D00B71ED5 /* LaunchScreen.storyboard */,
 				40C1F9511CA5835D00B71ED5 /* Info.plist */,
@@ -106,9 +130,7 @@
 		40DBBA7D1CA63E540015AB67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				40DBBA801CA67FDC0015AB67 /* Point.swift */,
-				40DBBA821CA67FEA0015AB67 /* Connection.swift */,
-				40DBBA841CA6801F0015AB67 /* PhysicsLike.swift */,
+				40DBBA841CA6801F0015AB67 /* PhysicsEngineLike.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -163,6 +185,7 @@
 				TargetAttributes = {
 					40C1F9411CA5835D00B71ED5 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = MY3EJRLTQM;
 					};
 					40C1F9551CA5835D00B71ED5 = {
 						CreatedOnToolsVersion = 7.3;
@@ -170,7 +193,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 40C1F93D1CA5835D00B71ED5 /* Build configuration list for PBXProject "PhysicsEngineLike" */;
+			buildConfigurationList = 40C1F93D1CA5835D00B71ED5 /* Build configuration list for PBXProject "physicsenginelike" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -214,11 +237,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40DBBA811CA67FDC0015AB67 /* Point.swift in Sources */,
-				40C1F9481CA5835D00B71ED5 /* ViewController.swift in Sources */,
 				40C1F9461CA5835D00B71ED5 /* AppDelegate.swift in Sources */,
-				40DBBA831CA67FEA0015AB67 /* Connection.swift in Sources */,
-				40DBBA851CA6801F0015AB67 /* PhysicsLike.swift in Sources */,
+				40BBDAE11CECBFB700176C63 /* OrientationDetector.swift in Sources */,
+				40DBBA851CA6801F0015AB67 /* PhysicsEngineLike.swift in Sources */,
+				40160A0D1CEBB3CF003C6808 /* ElasticBodyViewController.swift in Sources */,
+				40160A091CEBB3B1003C6808 /* ParticleView.swift in Sources */,
+				40160A0E1CEBB3CF003C6808 /* MenuViewController.swift in Sources */,
+				40160A0F1CEBB3CF003C6808 /* ParticleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,10 +374,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PhysicsEngineLike/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kiyang.PhysicsEngineLike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -360,10 +388,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PhysicsEngineLike/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kiyang.PhysicsEngineLike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -394,7 +425,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		40C1F93D1CA5835D00B71ED5 /* Build configuration list for PBXProject "PhysicsEngineLike" */ = {
+		40C1F93D1CA5835D00B71ED5 /* Build configuration list for PBXProject "physicsenginelike" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				40C1F95D1CA5835D00B71ED5 /* Debug */,
