@@ -9,6 +9,7 @@
 import UIKit
 
 class ElasticBodyViewController: UIViewController, OrientationDetectorDelegate {
+    @IBOutlet weak var stage: UIView!
     
     let physicsEngineLike: PhysicsEngineLike = PhysicsEngineLike()
     var orientationDetector = OrientationDetector()
@@ -18,9 +19,9 @@ class ElasticBodyViewController: UIViewController, OrientationDetectorDelegate {
         orientationDetector.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        physicsEngineLike.boundary = view.frame
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        physicsEngineLike.boundary = stage.bounds
         physicsEngineLike.gravityConstant = 600
         physicsEngineLike.start()
     }
@@ -29,7 +30,7 @@ class ElasticBodyViewController: UIViewController, OrientationDetectorDelegate {
         super.viewWillDisappear(animated)
         physicsEngineLike.stop()
         physicsEngineLike.removeParticles()
-        for view in self.view.subviews {
+        for view in stage.subviews {
             view.removeFromSuperview()
         }
     }
@@ -66,11 +67,11 @@ class ElasticBodyViewController: UIViewController, OrientationDetectorDelegate {
         particleView4.backgroundColor = UIColor.red
         particleView5.backgroundColor = UIColor.red
         
-        view.addSubview(particleView1)
-        view.addSubview(particleView2)
-        view.addSubview(particleView3)
-        view.addSubview(particleView4)
-        view.addSubview(particleView5)
+        stage.addSubview(particleView1)
+        stage.addSubview(particleView2)
+        stage.addSubview(particleView3)
+        stage.addSubview(particleView4)
+        stage.addSubview(particleView5)
         
         physicsEngineLike.addParticle(particleView1)
         physicsEngineLike.addParticle(particleView2)
