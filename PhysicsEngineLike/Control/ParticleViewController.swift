@@ -9,27 +9,30 @@
 import UIKit
 
 class ParticleViewController: UIViewController, OrientationDetectorDelegate {
+    @IBOutlet weak var stage: UIView!
+    
     var spawnParticleTimer:Timer?
     var touchingPoint = CGPoint.zero
     let physicsEngineLike: PhysicsEngineLike = PhysicsEngineLike()
     var orientationDetector = OrientationDetector()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         orientationDetector.delegate = self
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        physicsEngineLike.boundary = self.view.frame
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        physicsEngineLike.boundary = stage.bounds
         physicsEngineLike.gravityConstant = 600
         physicsEngineLike.start()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         physicsEngineLike.stop()
         physicsEngineLike.removeParticles()
-        for view in self.view.subviews {
+        for view in self.stage.subviews {
             view.removeFromSuperview()
         }
     }
@@ -37,12 +40,12 @@ class ParticleViewController: UIViewController, OrientationDetectorDelegate {
     @objc func spawnParticle(timer:Timer) {
         let particle = ParticleView(radius: 10)
         particle.center = touchingPoint
-        view.addSubview(particle)
+        stage.addSubview(particle)
         physicsEngineLike.addParticle(particle)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchingPoint = (touches.first?.location(in: self.view))!
+        touchingPoint = (touches.first?.location(in: stage))!
         spawnParticleTimer = Timer.scheduledTimer(timeInterval: 0.1,
                                                   target: self,
                                                   selector: #selector(spawnParticle(timer:)),
@@ -55,7 +58,7 @@ class ParticleViewController: UIViewController, OrientationDetectorDelegate {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchingPoint = (touches.first?.location(in: self.view))!
+        touchingPoint = (touches.first?.location(in: stage))!
     }
     
     func didChangeOrientation(orientation: GravityDirection) {
