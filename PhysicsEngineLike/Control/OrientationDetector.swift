@@ -13,24 +13,26 @@ public protocol OrientationDetectorDelegate {
 }
 
 public class OrientationDetector: NSObject {
-    private var delegate: OrientationDetectorDelegate?
-    public func setDelegate(delegate:OrientationDetectorDelegate) {
-        self.delegate = delegate
-        activate()
+    var delegate: OrientationDetectorDelegate? {
+        didSet {
+            activate()
+        }
     }
     
     public func activate() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(OrientationDetector.didChangeOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(OrientationDetector.didChangeOrientation),
+                                               name: NSNotification.Name.UIDeviceOrientationDidChange,
+                                               object: nil)
     }
     
     private func gravityDirection() -> GravityDirection {
-        let orientation = UIDevice.currentDevice().orientation
+        let orientation = UIDevice.current.orientation
         switch orientation {
-        case .PortraitUpsideDown:
+        case .portraitUpsideDown:
             return .Up
-        case .LandscapeLeft:
+        case .landscapeLeft:
             return .Left
-        case .LandscapeRight:
+        case .landscapeRight:
             return .Right
         default:
             return .Down
@@ -39,7 +41,7 @@ public class OrientationDetector: NSObject {
     
     @objc func didChangeOrientation() {
         if let d = delegate {
-            d.didChangeOrientation(gravityDirection())
+            d.didChangeOrientation(orientation: gravityDirection())
         }
     }
 }
