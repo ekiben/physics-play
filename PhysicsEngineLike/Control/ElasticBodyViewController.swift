@@ -15,17 +15,17 @@ class ElasticBodyViewController: UIViewController, OrientationDetectorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        orientationDetector.setDelegate(self)
+        orientationDetector.delegate = self
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         physicsEngineLike.boundary = view.frame
         physicsEngineLike.gravityConstant = 600
         physicsEngineLike.start()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         physicsEngineLike.stop()
         physicsEngineLike.removeParticles()
@@ -38,9 +38,9 @@ class ElasticBodyViewController: UIViewController, OrientationDetectorDelegate {
         physicsEngineLike.gravityDirection = orientation
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let point = (touches.first?.locationInView(self.view))!
-        spawn(point)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let point = (touches.first?.location(in: self.view))!
+        spawn(point: point)
     }
     
     func spawn(point: CGPoint) {
@@ -60,11 +60,11 @@ class ElasticBodyViewController: UIViewController, OrientationDetectorDelegate {
         particleView4.center = CGPoint(x: particleView3.center.x + connectionLength, y: particleView3.center.y)
         particleView5.center = CGPoint(x: particleView1.center.x + connectionLength/2, y: particleView2.center.y + connectionLength/2)
         
-        particleView1.backgroundColor = UIColor.redColor()
-        particleView2.backgroundColor = UIColor.redColor()
-        particleView3.backgroundColor = UIColor.redColor()
-        particleView4.backgroundColor = UIColor.redColor()
-        particleView5.backgroundColor = UIColor.redColor()
+        particleView1.backgroundColor = UIColor.red
+        particleView2.backgroundColor = UIColor.red
+        particleView3.backgroundColor = UIColor.red
+        particleView4.backgroundColor = UIColor.red
+        particleView5.backgroundColor = UIColor.red
         
         view.addSubview(particleView1)
         view.addSubview(particleView2)
@@ -78,14 +78,14 @@ class ElasticBodyViewController: UIViewController, OrientationDetectorDelegate {
         physicsEngineLike.addParticle(particleView4)
         physicsEngineLike.addParticle(particleView5)
         
-        physicsEngineLike.addConnection(particleView1, particle2: particleView2, length: connectionLength, stiffness: stiffness)
-        physicsEngineLike.addConnection(particleView1, particle2: particleView3, length: connectionLength, stiffness: stiffness)
-        physicsEngineLike.addConnection(particleView1, particle2: particleView5, length: connectionLength * sqrt(2) / 2, stiffness: stiffness)
-        physicsEngineLike.addConnection(particleView2, particle2: particleView4, length: connectionLength, stiffness: stiffness)
-        physicsEngineLike.addConnection(particleView2, particle2: particleView5, length: connectionLength * sqrt(2) / 2, stiffness: stiffness)
-        physicsEngineLike.addConnection(particleView3, particle2: particleView4, length: connectionLength, stiffness: stiffness)
-        physicsEngineLike.addConnection(particleView3, particle2: particleView5, length: connectionLength * sqrt(2) / 2, stiffness: stiffness)
-        physicsEngineLike.addConnection(particleView4, particle2: particleView5, length: connectionLength * sqrt(2) / 2, stiffness: stiffness)
+        physicsEngineLike.addConnection(particle1: particleView1, particle2: particleView2, length: connectionLength, stiffness: stiffness)
+        physicsEngineLike.addConnection(particle1: particleView1, particle2: particleView3, length: connectionLength, stiffness: stiffness)
+        physicsEngineLike.addConnection(particle1: particleView1, particle2: particleView5, length: connectionLength * sqrt(2) / 2, stiffness: stiffness)
+        physicsEngineLike.addConnection(particle1: particleView2, particle2: particleView4, length: connectionLength, stiffness: stiffness)
+        physicsEngineLike.addConnection(particle1: particleView2, particle2: particleView5, length: connectionLength * sqrt(2) / 2, stiffness: stiffness)
+        physicsEngineLike.addConnection(particle1: particleView3, particle2: particleView4, length: connectionLength, stiffness: stiffness)
+        physicsEngineLike.addConnection(particle1: particleView3, particle2: particleView5, length: connectionLength * sqrt(2) / 2, stiffness: stiffness)
+        physicsEngineLike.addConnection(particle1: particleView4, particle2: particleView5, length: connectionLength * sqrt(2) / 2, stiffness: stiffness)
 
     }
 }

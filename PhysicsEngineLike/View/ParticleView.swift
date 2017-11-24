@@ -34,7 +34,7 @@ public class ParticleView: UIView, Particle {
     init(radius:CGFloat) {
         super.init(frame: CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2))
         self.radius = radius
-        backgroundColor = UIColor.blueColor()
+        backgroundColor = UIColor.blue
         layer.masksToBounds = true
     }
     
